@@ -1,0 +1,24 @@
+<form name="myForm">
+    <label>Email:
+        <input type="email" name="input" ng-model="email.text" required>
+    </label>
+    <button ng-click="getCompany(email.text)" ng-disabled="!myForm.input.$valid">Get Company</button>
+    <pre>{{companyInfo.employment.name}}</pre>
+    <pre ng-show="error">{{error}}</pre>
+    <hr>
+    <div>
+        Name:
+        <input type="text" ng-model="user.name" ng-model-options="{ debounce: 250 }" /><br />
+    </div>
+    <div>Company List:</div>
+    <div ng-repeat="company in user.companyList track by $index">
+        {{company.name}} - {{company.domain}}
+    </div>
+    <hr>
+    <!--<label for="repeatSelect"> Repeat select: </label>-->
+    <!--<select name="repeatSelect" id="repeatSelect" ng-model="data.repeatSelect">-->
+        <!--<option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>-->
+    <!--</select>-->
+    <!--<hr>-->
+    <!--<pre>repeatSelect = {{data.repeatSelect}}</pre><br/>-->
+</form>
